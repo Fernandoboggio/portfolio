@@ -1,1 +1,248 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fernando Boggio — Diseñador gráfico senior</title>
+<meta name="description" content="Portfolio de Fernando Boggio, diseñador gráfico senior: branding, packaging, campañas y comunicación para retail.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,800;1,300;1,400;1,700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --ink:#161616; --muted:#565656; --line:#d8d8d8;
+  --panel:#1b1b1b; --panel-ink:#f3f3f3; --panel-muted:#adadad; --panel-line:#383838;
+  --font:'Open Sans','Segoe UI',Helvetica,Arial,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e0e0e; --ink:#f1f1f1; --muted:#a9a9a9; --line:#333;
+    --panel:#1a1a1a; --panel-line:#333;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e0e0e; --ink:#f1f1f1; --muted:#a9a9a9; --line:#333;
+  --panel:#1a1a1a; --panel-line:#333;
+  color-scheme:dark;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid currentColor;outline-offset:3px}
 
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1280px;margin:0 auto;padding:.9rem clamp(1rem,4vw,2.5rem);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.bar strong{font-weight:800;letter-spacing:-.01em}
+.bar nav{display:flex;gap:1.4rem;font-size:.95rem}
+.bar nav a{text-decoration:none;font-weight:600}
+.bar nav a:hover{text-decoration:underline;text-underline-offset:5px}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+
+.hero{padding:clamp(2rem,6vw,5rem) 0 clamp(2.5rem,6vw,5rem)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(1.5rem,5vw,4rem);align-items:end}
+.hero h1{margin:0;font-weight:800;text-transform:uppercase;line-height:.88;letter-spacing:-.03em;font-size:clamp(2.6rem,6.4vw,6.6rem);overflow-wrap:anywhere}
+.hero .role{margin:1.4rem 0 0;font-size:clamp(1.3rem,3vw,2.1rem);font-style:italic;font-weight:700;line-height:1.15}
+.hero .lead{margin:1.2rem 0 0;max-width:46ch;color:var(--muted);font-style:italic;font-weight:300;font-size:1.1rem}
+.hero figure{margin:0}
+.hero figure img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+
+.panel{background:var(--panel);color:var(--panel-ink);padding:clamp(2.5rem,6vw,5rem) 0 clamp(2rem,5vw,4rem)}
+.panel h2{margin:0;font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em;line-height:1}
+.index{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin:1.4rem 0 0;padding:0;list-style:none}
+.index a{color:var(--panel-muted);text-decoration:none;font-style:italic;font-size:1rem}
+.index a:hover{color:var(--panel-ink);text-decoration:underline;text-underline-offset:5px}
+
+.project{margin-top:clamp(3.5rem,8vw,6.5rem)}
+.project-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:1rem clamp(1.5rem,5vw,4rem);align-items:start;padding-top:1.4rem;margin-bottom:1.6rem;border-top:1px solid var(--panel-line)}
+.project-head h3{margin:0;font-weight:800;font-size:clamp(1.6rem,3.4vw,2.6rem);letter-spacing:-.02em;line-height:1.05}
+.project-head p{margin:0;max-width:62ch;color:var(--panel-muted);font-style:italic;font-weight:300;font-size:1.05rem}
+
+.gallery{columns:3;column-gap:14px}
+.piece{display:block;width:100%;margin:0 0 14px;padding:0;border:0;background:#0b0b0b;break-inside:avoid;cursor:zoom-in;line-height:0;color:inherit}
+.piece img{display:block;width:100%;height:auto}
+
+.month{margin-top:2rem}
+.month h4{margin:0 0 .6rem;font-weight:800;font-size:1.1rem}
+.gallery.row{columns:auto;display:grid;grid-template-columns:1fr 2fr 1fr;gap:10px;align-items:start}
+.gallery.row .piece{margin:0}
+.about{padding:clamp(3rem,7vw,6rem) 0}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(1.5rem,5vw,4rem)}
+.about h2,.contact h2{margin:0 0 1.2rem;font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em;line-height:1}
+.about p{margin:0 0 1rem;max-width:60ch;font-style:italic;font-weight:300;font-size:1.1rem}
+.about h3{margin:1.8rem 0 .6rem;font-size:1.05rem;font-weight:800}
+.about h3:first-child{margin-top:0}
+.about ul{margin:0;padding-left:1.1rem}
+.about li{margin:.2rem 0;font-style:italic}
+.timeline{list-style:none;padding:0!important;margin:0}
+.timeline li{padding:1rem 0;border-top:1px solid var(--line);font-style:normal!important}
+.timeline li:last-child{border-bottom:1px solid var(--line)}
+.timeline b{display:block;font-weight:800}
+.timeline span{display:block;color:var(--muted);font-style:italic;font-weight:300;margin-top:.2rem}
+
+.contact{padding:0 0 clamp(3rem,7vw,6rem)}
+.contact-box{border-top:1px solid var(--line);padding-top:clamp(2rem,5vw,3.5rem)}
+.contact a.big{display:block;width:fit-content;max-width:100%;font-weight:800;font-size:clamp(1.5rem,5vw,3.2rem);letter-spacing:-.02em;line-height:1.15;overflow-wrap:anywhere;text-underline-offset:8px}
+.contact a.big+a.big{margin-top:.4rem}
+footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--muted);font-size:.9rem}
+
+.lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + 56px) 1rem calc(env(safe-area-inset-bottom,0px) + 1rem)}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:1.5rem;line-height:1;cursor:pointer}
+.lb button:hover{background:rgba(255,255,255,.28)}
+.lb .x{top:calc(env(safe-area-inset-top,0px) + 8px);right:12px}
+.lb .p{left:10px;top:50%;transform:translateY(-50%)}
+.lb .n{right:10px;top:50%;transform:translateY(-50%)}
+
+@media (max-width:900px){
+  .gallery{columns:2}
+  .gallery.row{columns:auto;grid-template-columns:1fr 1fr}
+  .gallery.row .spread{grid-column:1/-1;order:-1}
+  .hero-grid,.about-grid,.project-head{grid-template-columns:minmax(0,1fr)}
+  .hero figure{max-width:360px}
+  .hero h1{font-size:clamp(2.6rem,14vw,7rem)}
+}
+@media (max-width:520px){
+  .bar nav{gap:1rem;font-size:.88rem}
+  .gallery{column-gap:10px}
+  .piece{margin-bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+  <strong>Fernando Boggio</strong>
+  <nav aria-label="Principal"><a href="#proyectos">Proyectos</a><a href="#sobre-mi">Sobre mí</a><a href="#contacto">Contacto</a></nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <h1>Fernando Boggio</h1>
+    <p class="role">Diseñador gráfico senior</p>
+    <p class="lead">Más de 17 años dirigiendo equipos creativos y construyendo sistemas de identidad visual para marcas de retail.</p>
+  </div>
+  <figure><img src="img/135.jpg" alt="Retrato en blanco y negro de Fernando Boggio" width="1004" height="1254"></figure>
+</div></section>
+
+<section class="panel" id="proyectos"><div class="wrap">
+  <h2>Proyectos</h2>
+  <ul class="index" aria-label="Ir a un proyecto">
+    <li><a href="#marcas">Marcas propias</a></li><li><a href="#hotsale">Hot Sale</a></li><li><a href="#sponsoreos">Sponsoreos y alianzas</a></li><li><a href="#electrofans">Electro Fans</a></li><li><a href="#campanas">Campañas</a></li><li><a href="#navidad">Navidad</a></li><li><a href="#jardin">Especial Jardín</a></li><li><a href="#redes">Redes y promociones</a></li><li><a href="#otras">Otras piezas</a></li><li><a href="#catalogos">Catálogos</a></li>
+  </ul>
+<section class="project" id="marcas">
+<header class="project-head"><h3>Marcas propias</h3><p>Identidad, packaging y comunicación para Quantic, Moddo, Saetta y Häuser: banners de marca, cajas con sus plantas de armado y lanzamientos de producto.</p></header>
+<div class="gallery"><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/025.jpg" width="848" height="895" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/026.jpg" width="851" height="889" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/027.jpg" width="852" height="894" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/028.jpg" width="853" height="893" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/029.jpg" width="1007" height="941" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/030.jpg" width="1238" height="746" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/031.jpg" width="731" height="1300" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/032.jpg" width="719" height="683" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/033.jpg" width="1300" height="787" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/034.jpg" width="1300" height="474" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/035.jpg" width="1300" height="1255" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Marcas propias"><img src="img/036.jpg" width="1300" height="445" alt="Marcas propias: pieza de diseño" loading="lazy" decoding="async"></button></div>
+</section>
+<section class="project" id="hotsale">
+<header class="project-head"><h3>Hot Sale</h3><p>Campaña completa para uno de los eventos más importantes del año: afiches de gran formato, stickers para sucursales, banners web, stories y piezas de redes.</p></header>
+<div class="gallery"><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/037.jpg" width="1300" height="867" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/038.jpg" width="1300" height="867" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/039.jpg" width="1300" height="731" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/040.jpg" width="731" height="1300" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/041.jpg" width="731" height="1300" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/042.jpg" width="731" height="1300" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/043.jpg" width="731" height="1300" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/044.jpg" width="650" height="650" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/045.jpg" width="731" height="1300" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/046.jpg" width="731" height="1300" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/047.jpg" width="1191" height="842" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Hot Sale"><img src="img/048.jpg" width="756" height="757" alt="Hot Sale: pieza de diseño" loading="lazy" decoding="async"></button></div>
+</section>
+<section class="project" id="sponsoreos">
+<header class="project-head"><h3>Sponsoreos y alianzas</h3><p>Comunicación para Racing Club, Los Pumas y The Messi Experience: gráfica de campaña, promociones con entradas, backing de prensa y diseño de camisetas.</p></header>
+<div class="gallery"><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/049.jpg" width="514" height="515" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/050.jpg" width="771" height="771" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/051.jpg" width="746" height="561" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/052.jpg" width="919" height="1300" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/053.jpg" width="950" height="1280" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/054.jpg" width="1091" height="927" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/055.jpg" width="506" height="814" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/056.jpg" width="731" height="1300" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/057.jpg" width="927" height="833" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/058.jpg" width="1080" height="1080" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/059.jpg" width="1300" height="866" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/060.jpg" width="751" height="564" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/061.jpg" width="596" height="846" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/062.jpg" width="1080" height="1080" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Sponsoreos y alianzas"><img src="img/063.jpg" width="616" height="611" alt="Sponsoreos y alianzas: pieza de diseño" loading="lazy" decoding="async"></button></div>
+</section>
+<section class="project" id="electrofans">
+<header class="project-head"><h3>Electro Fans</h3><p>Un evento con identidad propia: logotipo, paleta y sistema de piezas que se adapta a banners, redes, mails y banners bancarios.</p></header>
+<div class="gallery"><button class="piece" type="button" aria-label="Ampliar imagen de Electro Fans"><img src="img/064.jpg" width="1300" height="651" alt="Electro Fans: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Electro Fans"><img src="img/065.jpg" width="414" height="876" alt="Electro Fans: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Electro Fans"><img src="img/066.jpg" width="1243" height="859" alt="Electro Fans: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Electro Fans"><img src="img/067.jpg" width="569" height="858" alt="Electro Fans: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Electro Fans"><img src="img/068.jpg" width="434" height="901" alt="Electro Fans: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Electro Fans"><img src="img/069.jpg" width="417" height="428" alt="Electro Fans: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Electro Fans"><img src="img/070.jpg" width="826" height="828" alt="Electro Fans: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Electro Fans"><img src="img/071.jpg" width="1300" height="218" alt="Electro Fans: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Electro Fans"><img src="img/072.jpg" width="1300" height="324" alt="Electro Fans: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Electro Fans"><img src="img/073.jpg" width="1300" height="218" alt="Electro Fans: pieza de diseño" loading="lazy" decoding="async"></button></div>
+</section>
+<section class="project" id="campanas">
+<header class="project-head"><h3>Ayudantes de Campo y Te tiramos un Cetro</h3><p>Dos campañas con un mensaje claro y repetible: personajes, financiación y ofertas, en formatos de calle, web y redes.</p></header>
+<div class="gallery"><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/074.jpg" width="1300" height="731" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/075.jpg" width="1285" height="600" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/076.jpg" width="1300" height="731" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/077.jpg" width="1300" height="727" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/078.jpg" width="731" height="1300" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/079.jpg" width="731" height="1300" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/080.jpg" width="731" height="1300" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/081.jpg" width="731" height="1300" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/082.jpg" width="1300" height="999" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/083.jpg" width="1300" height="999" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Ayudantes de Campo y Te tiramos un Cetro"><img src="img/084.jpg" width="1280" height="772" alt="Ayudantes de Campo y Te tiramos un Cetro: pieza de diseño" loading="lazy" decoding="async"></button></div>
+</section>
+<section class="project" id="navidad">
+<header class="project-head"><h3>Navidad</h3><p>Campaña de fin de año para Cetrogar y Federar: promociones, saludos institucionales y ambientación de sucursales.</p></header>
+<div class="gallery"><button class="piece" type="button" aria-label="Ampliar imagen de Navidad"><img src="img/085.jpg" width="731" height="1300" alt="Navidad: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Navidad"><img src="img/086.jpg" width="1246" height="1300" alt="Navidad: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Navidad"><img src="img/087.jpg" width="626" height="589" alt="Navidad: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Navidad"><img src="img/088.jpg" width="866" height="1300" alt="Navidad: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Navidad"><img src="img/089.jpg" width="1300" height="454" alt="Navidad: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Navidad"><img src="img/090.jpg" width="868" height="601" alt="Navidad: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Navidad"><img src="img/091.jpg" width="1202" height="807" alt="Navidad: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Navidad"><img src="img/092.jpg" width="790" height="787" alt="Navidad: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Navidad"><img src="img/093.jpg" width="1122" height="772" alt="Navidad: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Navidad"><img src="img/094.jpg" width="699" height="556" alt="Navidad: pieza de diseño" loading="lazy" decoding="async"></button></div>
+</section>
+<section class="project" id="jardin">
+<header class="project-head"><h3>Especial Jardín</h3><p>Serie de piezas para una categoría estacional, con un lettering de césped y tierra como recurso central.</p></header>
+<div class="gallery"><button class="piece" type="button" aria-label="Ampliar imagen de Especial Jardín"><img src="img/095.jpg" width="731" height="1300" alt="Especial Jardín: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Especial Jardín"><img src="img/096.jpg" width="731" height="1300" alt="Especial Jardín: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Especial Jardín"><img src="img/097.jpg" width="731" height="1300" alt="Especial Jardín: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Especial Jardín"><img src="img/098.jpg" width="731" height="1300" alt="Especial Jardín: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Especial Jardín"><img src="img/099.jpg" width="731" height="1300" alt="Especial Jardín: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Especial Jardín"><img src="img/100.jpg" width="731" height="1300" alt="Especial Jardín: pieza de diseño" loading="lazy" decoding="async"></button></div>
+</section>
+<section class="project" id="redes">
+<header class="project-head"><h3>Redes y promociones</h3><p>Series para stories y feed: Black Friday con mensajes en secuencia y la línea “Nuevitos nuevitos” para productos recién llegados.</p></header>
+<div class="gallery"><button class="piece" type="button" aria-label="Ampliar imagen de Redes y promociones"><img src="img/101.jpg" width="731" height="1300" alt="Redes y promociones: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Redes y promociones"><img src="img/102.jpg" width="731" height="1300" alt="Redes y promociones: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Redes y promociones"><img src="img/103.jpg" width="731" height="1300" alt="Redes y promociones: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Redes y promociones"><img src="img/104.jpg" width="731" height="1300" alt="Redes y promociones: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Redes y promociones"><img src="img/105.jpg" width="731" height="1300" alt="Redes y promociones: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Redes y promociones"><img src="img/106.jpg" width="800" height="600" alt="Redes y promociones: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Redes y promociones"><img src="img/107.jpg" width="1080" height="1080" alt="Redes y promociones: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Redes y promociones"><img src="img/108.jpg" width="1080" height="1080" alt="Redes y promociones: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Redes y promociones"><img src="img/109.jpg" width="731" height="1300" alt="Redes y promociones: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Redes y promociones"><img src="img/110.jpg" width="731" height="1300" alt="Redes y promociones: pieza de diseño" loading="lazy" decoding="async"></button></div>
+</section>
+<section class="project" id="otras">
+<header class="project-head"><h3>Otras piezas</h3><p>Selección de trabajos fuera de las grandes campañas: merchandising y packaging de la Convención Nacional, ambientación de sucursales y vidrieras, banderas, aperturas de sucursales y gráfica de promoción.</p></header>
+<div class="gallery"><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/111.jpg" width="817" height="870" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/112.jpg" width="963" height="905" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/113.jpg" width="1190" height="883" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/114.jpg" width="988" height="753" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/115.jpg" width="200" height="200" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/116.jpg" width="798" height="596" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/117.jpg" width="1300" height="975" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/118.jpg" width="960" height="900" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/119.jpg" width="1300" height="773" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/120.jpg" width="693" height="923" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/121.jpg" width="731" height="1300" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/122.jpg" width="1080" height="1080" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/123.jpg" width="921" height="1300" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/124.jpg" width="504" height="506" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/125.jpg" width="904" height="621" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/126.jpg" width="1280" height="905" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/127.jpg" width="812" height="1280" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/128.jpg" width="764" height="868" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/129.jpg" width="1204" height="847" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/130.jpg" width="552" height="831" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/131.jpg" width="1300" height="650" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/132.jpg" width="858" height="866" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/133.jpg" width="1200" height="628" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button><button class="piece" type="button" aria-label="Ampliar imagen de Otras piezas"><img src="img/134.jpg" width="675" height="990" alt="Otras piezas: pieza de diseño" loading="lazy" decoding="async"></button></div>
+</section>
+<section class="project" id="catalogos">
+<header class="project-head"><h3>Catálogos mensuales 2026</h3><p>Catálogo de ofertas de 16 páginas, de enero a agosto de 2026: tapa, doble página de apertura y contratapa de cada edición.</p></header>
+<div class="month"><h4>Enero</h4><div class="gallery row"><button class="piece single" type="button" aria-label="Ampliar tapa del catálogo de Enero"><img src="img/001.jpg" width="717" height="552" alt="Catálogo de Enero 2026: tapa" loading="lazy" decoding="async"></button><button class="piece spread" type="button" aria-label="Ampliar doble página del catálogo de Enero"><img src="img/002.jpg" width="1742" height="670" alt="Catálogo de Enero 2026: doble página" loading="lazy" decoding="async"></button><button class="piece single" type="button" aria-label="Ampliar contratapa del catálogo de Enero"><img src="img/003.jpg" width="717" height="552" alt="Catálogo de Enero 2026: contratapa" loading="lazy" decoding="async"></button></div></div><div class="month"><h4>Febrero</h4><div class="gallery row"><button class="piece single" type="button" aria-label="Ampliar tapa del catálogo de Febrero"><img src="img/004.jpg" width="717" height="552" alt="Catálogo de Febrero 2026: tapa" loading="lazy" decoding="async"></button><button class="piece spread" type="button" aria-label="Ampliar doble página del catálogo de Febrero"><img src="img/005.jpg" width="1742" height="670" alt="Catálogo de Febrero 2026: doble página" loading="lazy" decoding="async"></button><button class="piece single" type="button" aria-label="Ampliar contratapa del catálogo de Febrero"><img src="img/006.jpg" width="717" height="552" alt="Catálogo de Febrero 2026: contratapa" loading="lazy" decoding="async"></button></div></div><div class="month"><h4>Marzo</h4><div class="gallery row"><button class="piece single" type="button" aria-label="Ampliar tapa del catálogo de Marzo"><img src="img/007.jpg" width="717" height="552" alt="Catálogo de Marzo 2026: tapa" loading="lazy" decoding="async"></button><button class="piece spread" type="button" aria-label="Ampliar doble página del catálogo de Marzo"><img src="img/008.jpg" width="1742" height="670" alt="Catálogo de Marzo 2026: doble página" loading="lazy" decoding="async"></button><button class="piece single" type="button" aria-label="Ampliar contratapa del catálogo de Marzo"><img src="img/009.jpg" width="717" height="552" alt="Catálogo de Marzo 2026: contratapa" loading="lazy" decoding="async"></button></div></div><div class="month"><h4>Abril</h4><div class="gallery row"><button class="piece single" type="button" aria-label="Ampliar tapa del catálogo de Abril"><img src="img/010.jpg" width="717" height="552" alt="Catálogo de Abril 2026: tapa" loading="lazy" decoding="async"></button><button class="piece spread" type="button" aria-label="Ampliar doble página del catálogo de Abril"><img src="img/011.jpg" width="1742" height="670" alt="Catálogo de Abril 2026: doble página" loading="lazy" decoding="async"></button><button class="piece single" type="button" aria-label="Ampliar contratapa del catálogo de Abril"><img src="img/012.jpg" width="717" height="552" alt="Catálogo de Abril 2026: contratapa" loading="lazy" decoding="async"></button></div></div><div class="month"><h4>Mayo</h4><div class="gallery row"><button class="piece single" type="button" aria-label="Ampliar tapa del catálogo de Mayo"><img src="img/013.jpg" width="717" height="552" alt="Catálogo de Mayo 2026: tapa" loading="lazy" decoding="async"></button><button class="piece spread" type="button" aria-label="Ampliar doble página del catálogo de Mayo"><img src="img/014.jpg" width="1742" height="670" alt="Catálogo de Mayo 2026: doble página" loading="lazy" decoding="async"></button><button class="piece single" type="button" aria-label="Ampliar contratapa del catálogo de Mayo"><img src="img/015.jpg" width="717" height="552" alt="Catálogo de Mayo 2026: contratapa" loading="lazy" decoding="async"></button></div></div><div class="month"><h4>Junio</h4><div class="gallery row"><button class="piece single" type="button" aria-label="Ampliar tapa del catálogo de Junio"><img src="img/016.jpg" width="717" height="552" alt="Catálogo de Junio 2026: tapa" loading="lazy" decoding="async"></button><button class="piece spread" type="button" aria-label="Ampliar doble página del catálogo de Junio"><img src="img/017.jpg" width="1742" height="670" alt="Catálogo de Junio 2026: doble página" loading="lazy" decoding="async"></button><button class="piece single" type="button" aria-label="Ampliar contratapa del catálogo de Junio"><img src="img/018.jpg" width="717" height="552" alt="Catálogo de Junio 2026: contratapa" loading="lazy" decoding="async"></button></div></div><div class="month"><h4>Julio</h4><div class="gallery row"><button class="piece single" type="button" aria-label="Ampliar tapa del catálogo de Julio"><img src="img/019.jpg" width="717" height="552" alt="Catálogo de Julio 2026: tapa" loading="lazy" decoding="async"></button><button class="piece spread" type="button" aria-label="Ampliar doble página del catálogo de Julio"><img src="img/020.jpg" width="1742" height="670" alt="Catálogo de Julio 2026: doble página" loading="lazy" decoding="async"></button><button class="piece single" type="button" aria-label="Ampliar contratapa del catálogo de Julio"><img src="img/021.jpg" width="717" height="552" alt="Catálogo de Julio 2026: contratapa" loading="lazy" decoding="async"></button></div></div><div class="month"><h4>Agosto</h4><div class="gallery row"><button class="piece single" type="button" aria-label="Ampliar tapa del catálogo de Agosto"><img src="img/022.jpg" width="800" height="566" alt="Catálogo de Agosto 2026: tapa" loading="lazy" decoding="async"></button><button class="piece spread" type="button" aria-label="Ampliar doble página del catálogo de Agosto"><img src="img/023.jpg" width="1800" height="636" alt="Catálogo de Agosto 2026: doble página" loading="lazy" decoding="async"></button><button class="piece single" type="button" aria-label="Ampliar contratapa del catálogo de Agosto"><img src="img/024.jpg" width="800" height="566" alt="Catálogo de Agosto 2026: contratapa" loading="lazy" decoding="async"></button></div></div>
+</section>
+</div></section>
+
+<section class="about" id="sobre-mi"><div class="wrap about-grid">
+  <div>
+    <h2>Sobre mí</h2>
+    <p>Comunicador visual con más de 17 años de experiencia liderando departamentos creativos y equipos multidisciplinarios en diseño, marketing y publicidad.</p>
+    <p>Me especializo en crear sistemas de identidad visual, gestionar proyectos de gran escala y optimizar procesos de producción gráfica. Transformo conceptos abstractos en soluciones visuales que impulsan el crecimiento del negocio, con foco en la mentoría de talentos y en metodologías ágiles.</p>
+  </div>
+  <div>
+    <h3>Gestión y liderazgo</h3>
+    <ul><li>Dirección de arte y creativa</li><li>Gestión de proyectos (ágiles y Scrum)</li><li>Mentoría y desarrollo de equipos</li></ul>
+    <h3>Técnicas y software</h3>
+    <ul><li>Adobe Creative Cloud (Photoshop, Illustrator, InDesign, Premiere, After Effects)</li><li>Preprensa y producción gráfica</li><li>Branding y arquitectura de marca</li><li>Meta Ads, Google Ads, email marketing y WhatsApp</li><li>Redes sociales</li></ul>
+    <h3>Trayectoria</h3>
+    <ul class="timeline">
+      <li><b>2013 – 2026 · Cetrogar</b>Coordinador senior de medios y diseño. Supervisión de los equipos de Diseño y Medios, rebranding global de la compañía y coherencia visual en todos los canales. Control de presupuesto de proveedores, imprentas, medios y agencias.</li>
+      <li><b>2009 – 2013 · Cetrogar</b>Diseñador gráfico. Campañas de branding y performance, desde la creación hasta la implementación en cada plataforma y medio.</li>
+      <li><b>2003 – 2008 · Universidad Nacional del Nordeste</b>Diseñador gráfico.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="contact" id="contacto"><div class="wrap"><div class="contact-box">
+  <h2>Contacto</h2>
+  <a class="big" href="mailto:boggio1983@gmail.com">boggio1983@gmail.com</a>
+  <a class="big" href="https://wa.me/5493624239896" rel="noopener">+54 362 4239896</a>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Fernando Boggio. Las piezas pertenecen a sus respectivas marcas.</div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <button class="x" type="button" aria-label="Cerrar">×</button>
+  <button class="p" type="button" aria-label="Anterior">‹</button>
+  <img alt="">
+  <button class="n" type="button" aria-label="Siguiente">›</button>
+</div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'),big=lb.querySelector('img'),set=[],i=0,opener=null;
+  function show(){var im=set[i].querySelector('img');big.src=im.src;big.alt=im.alt}
+  function open(btn){
+    set=[].slice.call(btn.closest('.gallery').querySelectorAll('.piece'));
+    i=set.indexOf(btn);opener=btn;show();lb.classList.add('open');
+    document.body.style.overflow='hidden';lb.querySelector('.x').focus();
+  }
+  function close(){lb.classList.remove('open');document.body.style.overflow='';if(opener)opener.focus()}
+  function step(d){i=(i+d+set.length)%set.length;show()}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.piece');if(b){open(b);return}
+    if(!lb.classList.contains('open'))return;
+    if(e.target.closest('.x')||e.target===lb)close();
+    else if(e.target.closest('.p'))step(-1);
+    else if(e.target.closest('.n'))step(1);
+  });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    else if(e.key==='ArrowLeft')step(-1);
+    else if(e.key==='ArrowRight')step(1);
+  });
+})();
+</script>
+</body>
+</html>
